@@ -1,6 +1,6 @@
 {% set name = "pytest-ignore-flaky" %}
-{% set version = "0.1.1" %}
-{% set sha256 = "78f8ddf9b405c09ce852a4ceac58258e4b8d98d2bc236a03d4a075cdc51c56c6" %}
+{% set version = "1.0.0" %}
+{% set sha256 = "29b3099cf4d424fd553d39940f7025acf6847ecbba292649a0dc764dfbb7d59e" %}
 
 package:
   name: {{ name|lower }}
