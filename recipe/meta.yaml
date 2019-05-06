@@ -37,7 +37,6 @@ about:
   summary: 'ignore failures from flaky tests (pytest plugin)'
   dev_url: https://github.com/schettino72/pytest-ignore-flaky
 
-
 extra:
   recipe-maintainers:
     - rmcgibbo
