@@ -1,6 +1,6 @@
 {% set name = "pytest-ignore-flaky" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "29b3099cf4d424fd553d39940f7025acf6847ecbba292649a0dc764dfbb7d59e" %}
+{% set version = "2.0.0" %}
+{% set sha256 = "9de6cc7648db067723b9a85c63aceace61d639ab41db389f22644d660e379d50" %}
 
 package:
   name: {{ name|lower }}
@@ -14,10 +14,10 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
 
@@ -34,7 +34,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'ignore failures from flaky tests (pytest plugin)'
+  summary: ignore failures from flaky tests (pytest plugin)
   dev_url: https://github.com/schettino72/pytest-ignore-flaky
 
 extra:
