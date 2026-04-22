@@ -1,6 +1,6 @@
 {% set name = "pytest-ignore-flaky" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "29b3099cf4d424fd553d39940f7025acf6847ecbba292649a0dc764dfbb7d59e" %}
+{% set version = "2.2.1" %}
+{% set sha256 = "04416f6b2177ef1f2adcb9308a887bf1cf77e7062d71778e404f358d4bbef0c9" %}
 
 package:
   name: {{ name|lower }}
@@ -8,16 +8,16 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
 
