@@ -1,6 +1,6 @@
 {% set name = "pytest-ignore-flaky" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "29b3099cf4d424fd553d39940f7025acf6847ecbba292649a0dc764dfbb7d59e" %}
+{% set version = "2.2.0" %}
+{% set sha256 = "e3fb91f3513babf8ad1a4175592be81da208ebd99b2f772cf6ce5cbfb94c7e64" %}
 
 package:
   name: {{ name|lower }}
@@ -14,10 +14,10 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
+  host:
     - python
     - pip
 
